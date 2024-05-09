@@ -3,3 +3,4 @@
 *.PrjPcb filter=lfs diff=lfs merge=lfs -text
 *.SchDoc filter=lfs diff=lfs merge=lfs -text
 *.SchLib filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
