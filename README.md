@@ -1,5 +1,4 @@
-NESceptor
-=========
+# NESceptor
 
 The NESceptor is a small hardware mod that adds a USB output to a 1985 Nintendo Entertainment System.
 This mod is designed to provide support for speedrunning and speedrunning competitions.
@@ -9,8 +8,7 @@ The primary use case is to:
  - Transmit console power status
  - Transmit precise timing information
 
-Design Decisions
-----------------
+## Design Decisions
 
 ### Why this overall design?
 
@@ -111,3 +109,11 @@ The RP2350 is cheaper and should be capable of reading the NESs roughly 2 MHz si
 USB is simple and well supported, will allow for communication and power delivery.
 Ethernet is not necessary in this application because the nesbox mini pc will handle that.
 Wifi for communication is expected to be unreliable - although this is unclear.
+
+## Dev Instructions
+
+### Hardware development
+
+Install [KiCad](https://www.kicad.org/) for schematics / pcb design / etc.
+On my Ubuntu based machines I just use `snap install kicad`, even though I dislike snap - this got me `kicad 9.0.1` last time.
+I'm using KiCad because it's free, and this is an open source project.
