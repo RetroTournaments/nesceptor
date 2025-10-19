@@ -21,7 +21,7 @@ To satisfy this requirement - while also balancing the desires to be able to qui
 The first board sits inside the console and attaches directly to the back of the CPU via a series of castellations.
 This first board provides level translation and hosts the microcontroller which does all necessary i/o and processing.
 
-The second part sits in the small outside slot on the left hand side of the console and is attached via double sided tape and a small flat cable which goes back to the in console pcb.
+The second part sits in the small outside slot on the left hand side of the console and is attached via double sided tape and a small cable which goes back to the in console pcb.
 This second board has ESD protection and the USB port for power in and data trasmission out.
 
 A rough block diagram is below:
@@ -29,11 +29,11 @@ A rough block diagram is below:
 ```
                      +--inconsole/--------------------+   +--usbport/---------+
      +------------+  |  +--------+    +------------+  |   |                   |
-     |            |  |  |        |    |            |  |   | USB 1.1 Type B    |
+     |            |  |  |        |    |            |  |   | USB connection    |
      | NES CPU    |  |  | 5V to  |    | Rp2350     |  |   |                   |
-     |            |  |  | 3.3V   |    | Micro-     |  |   | ESD protection?   |
+     |            |  |  | 3.3V   |    | Micro-     |  |   | ESD protection    |
      | 8 data     |  |  |        |    | controller |  |   |                   |
-     | 14 addr    | --> | Level  | -> |            | ---> | Power?            |
+     | 14 addr    | --> | Level  | -> |            | ---> |                   |
      | 3 aux      |  |  | Trans- |    | Watching / | <--- |                   |
      | --         |  |  | lators |    | Filtering  |  |   |                   |
      | 25 signals |  |  |        |    |            |  |   |                   |
@@ -48,12 +48,12 @@ The `inconsole` pcb is connected to the NES CPU with 40 castellations.
 Consider:
 
 - Removing the CPU and/or PPU can be difficult for novices (ahem) and requires patience, dedicated tools, and practice.
-  Once removed a socket is often installed, and the CPU/PPU have to be installed into yet another socket, and the whole thing is fiddly and may lead to damage.
-- The CPU itself is not subjected to heat or potential damage, and is left mostly alone with this design.
+  Then once removed a socket is installed, and the CPU/PPU have to be installed into yet another socket, and the whole thing is fiddly and may lead to damage.
+- The CPU itself is not subjected to heat or potential damage (when removing it), and is left basically alone with this design.
 - A flex pcb was tried at one point, but it proved very difficult to install and remove.
   Flex pcbs are also more expensive to manufacture.
 
-The main drawback to the castellations is that they may make the nesceptor difficult to remove.
+The main drawback to the castellations is that they may make the nesceptor difficult to remove, although this has not been tested yet.
 
 ### Which signals are needed from the console?
 
@@ -68,7 +68,7 @@ The following signals are absolutely required:
 This gives a total of 25 signals.
 
 Historically `NMI` was also watched - but it was not used in the first version.
-Maybe the controller pins are important, or `IRQ`, but they were never hooked up.
+Maybe the controller pins are important, or `IRQ`, but they were never hooked up in the original.
 
 ### Notes on level translation
 
@@ -76,21 +76,9 @@ The NES is a 5V system, which is relatively high by modern standards, as most mo
 For example the [RP2350 datasheet](https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf) indicates a maximum 3.63V supply voltage (`IOVDD`) and `IOVDD + 0.3` as maximum input voltage.
 The NES signals must be translated to not damage the microcontrollers.
 
-Some considerations
-
-- There are 25 channels to translate which is annoyingly _one more_ than 24 (a nice multiple of both 6 and 8), but it is what it is.
-- The level translators must act as high impedence when unpowered, so that the console operates as normal when the mod is not plugged in.
-- The level translators must not be used to change or interact with the console whatsoever.
-  Preferably unidirectional.
-  This is imperative to maintain the legitimacy of the speedrunning and should be easily verified by third parties.
-
-### Why the SN74LXC8T245, TXU0104, and TXU0101?
-
-These level shifters were chosen because of their availability, cost, and adherence to the requirements above.
-Also due to familiarity with their characteristics.
-
-Additionally, they will be powered (`VCCA`) by the Nintendo entertainment system itself.
-This is to ensure threshold levels since the USB 5V could be anywhere between 4.8 ~ 5.2V.
+The level translators must not be used to change or interact with the console whatsoever.
+They are preferably unidirectional.
+This is imperative to maintain the legitimacy of the speedrunning and should be easily verified by third parties.
 
 ### Why the RP2350?
 
@@ -106,14 +94,24 @@ The RP2350 is cheaper and should be capable of reading the NESs roughly 2 MHz si
 
 ### Why USB
 
-USB is simple and well supported, will allow for communication and power delivery.
-Ethernet is not necessary in this application because the nesbox mini pc will handle that.
-Wifi for communication is expected to be unreliable - although this is unclear.
+USB is simple and well supported, people probably already have a ton of cables.
+This will allow for communication and power delivery.
+Ethernet is not necessary in this application because the nesbox mini pc will handle that, and would introduce some additional complications when it comes to networking.
+Wifi for communication is expected to be unreliable - although this is unknown.
 
 ## Dev Instructions
 
-### Hardware development
+### Hardware Design / Development
 
 Install [KiCad](https://www.kicad.org/) for schematics / pcb design / etc.
 On my Ubuntu based machines I just use `snap install kicad`, even though I dislike snap - this got me `kicad 9.0.1` last time.
 I'm using KiCad because it's free, and this is an open source project.
+
+
+### Firmware development
+
+Under construction.
+
+### Ordering instructions
+
+Under construction.
