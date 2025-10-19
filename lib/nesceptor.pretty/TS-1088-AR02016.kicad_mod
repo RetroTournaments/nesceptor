@@ -1,0 +1,124 @@
+(footprint "TS-1088-AR02016"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "ae5091d3-62b7-4726-b74d-0e60e4a51e53")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "TS-1088-AR02016"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "51235e52-973c-457c-89eb-a81b28a7101e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6676f3f3-2737-4a18-a4fa-a6dfa84b93a3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "02be4949-78f8-4483-b083-222290f86cb2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -3 -1.5)
+		(end 3 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "d7ffdd03-9eff-4700-8cc1-eeba4f40c4f2")
+	)
+	(fp_line
+		(start -3 1.5)
+		(end -3 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "9903a745-f5bd-48db-abcb-b94b20ebd984")
+	)
+	(fp_line
+		(start 3 -1.5)
+		(end 3 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "34ea177f-3065-46c5-94d2-aca01d1ec3ba")
+	)
+	(fp_line
+		(start 3 1.5)
+		(end -3 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "0d089b85-49a2-444b-b7cf-54bdb237ed24")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "bd0e7eba-c43e-4c54-b436-a2cbdd806f8b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.225 0)
+		(size 1.05 2)
+		(property pad_prop_heatsink)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "04e624e1-b1b8-405b-96fe-d27982874cab")
+	)
+	(pad "2" smd rect
+		(at 2.225 0)
+		(size 1.05 2)
+		(property pad_prop_heatsink)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7e3bed1e-b078-4aba-b8c8-917938877491")
+	)
+	(embedded_fonts no)
+)
