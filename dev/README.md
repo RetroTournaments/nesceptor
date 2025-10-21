@@ -98,3 +98,24 @@ First few things before it has even shown up.
 - Include the pin 0 on silkscreen to avoid back and forth email.
 
 Waiting for it to show up, and then will test!
+
+## 2025-10 `usbport/` -- rev 0
+
+Before even the other two revision 0s have shown up I'm investigating the `usbport/`.
+Essentially I'm just going to steal the design from the [Unified Daughterboard](https://github.com/Unified-Daughterboard/UDB-S) project - which is another open source project primarily for mechanical keyboards.
+Unfortunately their original design does not fit exactly where I want this to fit, so I will have to move things around a little bit probably screwing things up in the process.
+
+One other main consideration about the usbport is that it needs a little enclosure to keep everything neat and tidy and protected.
+I was originally thinking of coming out the left of the console - but we have power out the back, and composite out the right, so would be better to not add another cable out another side.
+Then I ordered a unified daughterboard just to test, and the Pico EZMate connector is so small that it fits out the expansion port directly, and does not need to come out the vents.
+Going to try for out the back on the 0th revision.
+
+The back slot is about 99mm long, 12.5mm deep, ~16 mm wide (15.9 at 'top', 16.5 at 'bottom').
+Let's imagine then 1.5mm thick walls on both sides, gives me a 12 mm wide pcb, 1.6mm thick.
+I do not think I need to go the full length, but it would make it a bit easier for pushing the usb cable in to have some backing.
+Regardless the PCB itself does not need to go to the back.
+
+In keeping with stealing from the unified daughterboard project, we'll be using this [usb c connector - C165948](https://jlcpcb.com/partdetail/Korean_HropartsElec-TYPE_C_31_M12/C165948).
+
+For the enclosure thinking of starting with a single hole in the middle M3 with [threaded inserts](https://www.mcmaster.com/products/threaded-inserts/threaded-inserts-3~/tapered-heat-set-inserts-for-plastic-7/).
+
