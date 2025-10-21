@@ -117,7 +117,27 @@ I'm using OpenSCAD because its free, programmatic, and this is an open source pr
 
 ### Firmware Development
 
-Under construction.
+Firmware is developed using the [RP2350 C/C++ SDK](https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html).
+
+To get started you need to have cloned this repo with submodules, or else use `git submodule update --init --recursive`.
+Install the necessary prerequisites for the pico sdk:
+
+```
+sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+```
+
+Then you have to initialize the cmake build system with:
+
+```
+mkdir build
+cd build
+../scripts/cmake.sh
+```
+
+Then to build the firmware (source code in `include/` and `src/`), simply use `make`.
+
+To flash the firmware to the nesceptor you need to hold the bootsel button when plugging it in, and then drag and rop the completed `.uf2` file onto the device.
+It should then reboot and start running immediately.
 
 ### Ordering instructions
 
