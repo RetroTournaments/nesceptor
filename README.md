@@ -21,7 +21,7 @@ To satisfy this requirement - while also balancing the desires to be able to qui
 The first board sits inside the console and attaches directly to the back of the CPU via a series of castellations.
 This first board provides level translation and hosts the microcontroller which does all necessary i/o and processing.
 
-The second part sits in the small outside slot on the left hand side of the console and is attached via double sided tape and a small cable which goes back to the in console pcb.
+The second part sits in the small outside slot on the back of the console and is attached via double sided tape and a small cable which goes back to the in console pcb.
 This second board has ESD protection and the USB port for power in and data trasmission out.
 
 A rough block diagram is below:
@@ -101,14 +101,21 @@ Wifi for communication is expected to be unreliable - although this is unknown.
 
 ## Dev Instructions
 
-### Hardware Design / Development
+### PCB Development
 
 Install [KiCad](https://www.kicad.org/) for schematics / pcb design / etc.
-On my Ubuntu based machines I just use `snap install kicad`, even though I dislike snap - this got me `kicad 9.0.1` last time.
+I just use `snap install kicad`.
+This got me `kicad 9.0.1` last time.
 I'm using KiCad because it's free, and this is an open source project.
 
+### Enclosure Development
 
-### Firmware development
+Install [OpenSCAD](https://openscad.org/) for the 3d printed usbport enclosure.
+I just use `snap install openscad`.
+This got me `openscad 2021.01` last time.
+I'm using OpenSCAD because its free, programmatic, and this is an open source project.
+
+### Firmware Development
 
 Under construction.
 
