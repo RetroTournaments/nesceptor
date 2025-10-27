@@ -1,0 +1,9 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+D1,ESD5Z5V0,D_SOD-523,89.6,-97.6,-90,top
+F1,SMD0805-050-16V,Fuse_1206_3216Metric,87.6,-98.6,-90,top
+FB1,GZ2012D601TF,L_0805_2012Metric,87.4,-82.4,-90,top
+J1,USB_C_Receptacle_USB2.0_16P,HRO-TYPE-C-31-M-12-Assembly,92,-76.8375,180,top
+J2,Conn_01x04_MountingPin,PicoEZMate-Reinforced-Lite,92,-103.5,90,top
+R1,5.1k,R_0402_1005Metric,96.2,-82.4,180,top
+R2,5.1k,R_0402_1005Metric,96.2,-83.6,0,top
+U1,TPD4E05U06DQAR,USON-10_2.5x1.0mm_P0.5mm,92,-84.2,0,top

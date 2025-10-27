@@ -119,3 +119,22 @@ In keeping with stealing from the unified daughterboard project, we'll be using 
 
 For the enclosure thinking of starting with a single hole in the middle M3 with [threaded inserts](https://www.mcmaster.com/products/threaded-inserts/threaded-inserts-3~/tapered-heat-set-inserts-for-plastic-7/).
 
+## 2025-10 `inconsole/` -- rev 0 continued
+
+The inconsole prototype showed up first and incredibly the RP2354a is actually working??
+Just straight up plugged in the usb via a unified daughterboard (because my usbport rev is not done), and it just booted up with no problems..
+Then I was able to install my own firmware - just a hello world thing, and it worked? Like uhhhhh. Insane!
+
+> Rev 1 - Include the bootsel button within the final design. Actually no, the boot at 1200 baud does it.
+> Rev 1 - Have not needed the run button or the debug port yet.
+
+Now I need to test the 5V level translation part, and actually read the GPIO.
+I wrote a small program (in this commit), and then just by shorting the RST pin to 5V with a little jumper cable it works.
+No smoke either.
+I just think everything is working?
+We do have to get into the nitty gritty with timing and stuff now.
+Hopefully testbench shows up - do I need to do some PIO stuff here?
+
+## 2025-10 Wires
+I ordered 200 25cm wires from [here](https://www.alibaba.com/product-detail/Customized-Molex-EZmate-78171-78172-1_1600697379284.html).
+Hopefully long enough, and correct!
